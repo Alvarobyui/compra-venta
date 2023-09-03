@@ -9,11 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    protected $table = 'productos';
+
     public function up(): void
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('detalle');
+            $table->boolean('status');
         });
     }
 

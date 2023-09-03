@@ -43,8 +43,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-    $usuario = User::findOrFail($id);
-    return $usuario;
+        $usuario = User::findOrFail($id);
+        return $usuario;
     }
 
     /**
@@ -70,7 +70,7 @@ class UserController extends Controller
     
         $usuario->update($data);
     
-        return redirect()->route('usuarios.show', ['usuario' => $usuario]);
+        return $usuario;
     }
 
     /**
@@ -78,9 +78,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-    $usuario = User::findOrFail($id);
-    $usuario->status = false;
+        $usuario = User::findOrFail($id);
+        $usuario->status = false;
 
-    return redirect()->route('nombre-de-tu-ruta');
+        return $usuario;
     }
 }
